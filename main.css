@@ -13,6 +13,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    /* Added padding for mobile spacing */
 }
 
 header {
@@ -49,6 +51,8 @@ main {
     justify-content: center;
     gap: 30px;
     margin-top: 40px;
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
 }
 
 .download-button img {
@@ -58,4 +62,43 @@ main {
 
 .download-button img:hover {
     transform: scale(1.1);
+}
+
+/* Mobile-first approach */
+@media (max-width: 768px) {
+    .download-button img {
+        height: 50px;
+    }
+
+    body {
+        padding: 10px;
+        /* Less padding on smaller screens */
+    }
+
+    header {
+        padding: 10px;
+        /* Adjust padding for mobile */
+    }
+}
+
+/* For smaller mobile devices (like portrait phones) */
+@media (max-width: 480px) {
+
+    .nav-name {
+        font-size: 18px;
+        /* Further reduce font size */
+    }
+
+    .button-container {
+        flex-direction: column;
+        /* Stack buttons vertically */
+        gap: 15px;
+        /* Reduce gap between buttons */
+    }
+
+    .download-button img {
+        width: 12rem;
+        height: auto;
+    }
+
 }
